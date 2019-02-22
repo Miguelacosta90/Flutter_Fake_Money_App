@@ -55,8 +55,8 @@ class MakeItRainState extends State<MakeItRain> {
             )),
             new Expanded(
               child: new AnimatedOpacity(
-                  duration: Duration(microseconds: 5000),
                   opacity: _visible ? 0.0 : 1.0,
+                  duration: Duration(milliseconds: 500),
                   child: new Center(
                     child: new Text(
                       "making money",
