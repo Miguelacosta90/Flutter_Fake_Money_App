@@ -23,7 +23,7 @@ class MakeItRainState extends State<MakeItRain> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Make Me Money"),
-        backgroundColor: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
+        backgroundColor: _moneyCounter > 2000 ? Colors.greenAccent : Colors.lightBlueAccent,
       ),
       body: new Container(
         child: new Column(
@@ -34,7 +34,7 @@ class MakeItRainState extends State<MakeItRain> {
                 child: new Text(
                   "Get That Money",
                   style: new TextStyle(
-                    color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
+                    color: _moneyCounter > 2000 ? Colors.greenAccent : Colors.lightBlueAccent,
                     fontWeight: FontWeight.w900,
                     fontSize: 30.0,
                   ),
@@ -45,7 +45,7 @@ class MakeItRainState extends State<MakeItRain> {
                 child: new Center(
               child: new Text('\$$_moneyCounter',
                   style: new TextStyle(
-                    color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
+                    color: _moneyCounter > 2000 ? Colors.greenAccent : Colors.lightBlueAccent,
                     fontSize: 50.0,
                     fontWeight: FontWeight.w800,
                   )),
@@ -57,7 +57,7 @@ class MakeItRainState extends State<MakeItRain> {
                   style: new TextStyle(
                     fontSize: 40.0,
                     fontWeight: FontWeight.w900,
-                    color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
+                    color: _moneyCounter > 2000 ? Colors.greenAccent : Colors.lightBlueAccent,
                   ),
                 ),
               ),
@@ -65,7 +65,7 @@ class MakeItRainState extends State<MakeItRain> {
             new Expanded(
                 child: new Center(
               child: new RaisedButton(
-                color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
+                color: _moneyCounter > 2000 ? Colors.greenAccent : Colors.lightBlueAccent,
                 textColor: Colors.white,
                 onPressed: _rainMoney,
                 child: new Text(
