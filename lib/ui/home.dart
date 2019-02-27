@@ -9,15 +9,12 @@ class MakeItRain extends StatefulWidget {
 
 class MakeItRainState extends State<MakeItRain> {
   int _moneyCounter = 0;
-  bool _visible = true;
+  var _makingMoney = "Making Money";
 
   void _rainMoney() {
     setState(() {
-      _moneyCounter = _moneyCounter + 100;
       //Testing methods to fade the text on every press.
-      if (_moneyCounter >= 100) {
-        _visible = !_visible;
-      }
+      _moneyCounter = _moneyCounter + 100;
     });
   }
 
@@ -26,7 +23,7 @@ class MakeItRainState extends State<MakeItRain> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Make Me Money"),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
       ),
       body: new Container(
         child: new Column(
@@ -37,7 +34,7 @@ class MakeItRainState extends State<MakeItRain> {
                 child: new Text(
                   "Get That Money",
                   style: new TextStyle(
-                    color: Colors.lightBlueAccent,
+                    color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
                     fontWeight: FontWeight.w900,
                     fontSize: 30.0,
                   ),
@@ -48,30 +45,27 @@ class MakeItRainState extends State<MakeItRain> {
                 child: new Center(
               child: new Text('\$$_moneyCounter',
                   style: new TextStyle(
-                    color: Colors.lightBlueAccent,
+                    color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
                     fontSize: 50.0,
                     fontWeight: FontWeight.w800,
                   )),
             )),
             new Expanded(
-              child: new AnimatedOpacity(
-                  opacity: _visible ? 0.0 : 1.0,
-                  duration: Duration(milliseconds: 500),
-                  child: new Center(
-                    child: new Text(
-                      "making money",
-                      style: new TextStyle(
-                        fontSize: 40.0,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.lightBlueAccent,
-                      ),
-                    ),
-                  )),
+              child: new Center(
+                child: new Text(
+                  '$_makingMoney',
+                  style: new TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.w900,
+                    color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
+                  ),
+                ),
+              ),
             ),
             new Expanded(
                 child: new Center(
-              child: new FlatButton(
-                color: Colors.lightBlueAccent,
+              child: new RaisedButton(
+                color: _moneyCounter > 2000 ? Colors.yellow : Colors.lightBlueAccent,
                 textColor: Colors.white,
                 onPressed: _rainMoney,
                 child: new Text(
